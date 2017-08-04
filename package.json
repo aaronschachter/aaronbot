@@ -1,0 +1,16 @@
+{
+  "name": "aaronbot",
+  "version": "0.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "fb": "^2.0.0"
+  }
+}
