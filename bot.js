@@ -81,7 +81,7 @@ function receivedMessage(event) {
         return replies.sendImageMessage(senderID);
 
      case 'exit':
-        return replies.sendTextMessage(senderID, 'Thanks for rocking out! Say MENU to play again.');
+        return replies.sendExitMessage(senderID);
 
       default:
         return replies.sendTextMessage(senderID, messageText);
@@ -103,7 +103,7 @@ function receivedPostback(event) {
 }
 
 
-// Set Express to listen out for HTTP requests
-const server = app.listen(process.env.PORT || 3000, function () {
+// Start server.
+const server = app.listen(process.env.PORT || 3000, () => {
   console.log("Listening on port %s", server.address().port);
 });
