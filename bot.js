@@ -70,21 +70,16 @@ function receivedMessage(event) {
   const messageAttachments = message.attachments;
 
   if (messageText) {
-    switch (messageText.toLowerCase()) {
+    const input = messageText.toLowerCase();
+    switch (input) {
       case 'menu':
         return replies.sendMenuMessage(senderID);
-
-      case 'elephant':
-        return replies.sendImageMessage(senderID);
-  
-     case 'draw again':
-        return replies.sendImageMessage(senderID);
 
      case 'exit':
         return replies.sendExitMessage(senderID);
 
       default:
-        return replies.sendTextMessage(senderID, messageText);
+        return replies.sendFlashCardMessage(senderID, input);
     }
   } else if (messageAttachments) {
     return replies.sendTextMessage(senderID, "Message with attachment received");
